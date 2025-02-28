@@ -1,5 +1,5 @@
 # E-commerce-website
-making my second website in bca second year.
+making my second website in BCA FIRST YEAR.
 HII, I am Sumit from patna, studying BCA in Patlliputra university. This is my 2nd full Furnished WEbsite.
 
 🌟 What’s This About?
