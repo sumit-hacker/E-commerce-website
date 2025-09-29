@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email Address</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Email container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .email-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .email-header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .email-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* Content */
+        .email-content {
+            padding: 40px 30px;
+            line-height: 1.6;
+            color: #333333;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .message {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555555;
+        }
+        
+        /* Button */
+        .verify-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .verify-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        /* Alternative link */
+        .alternative-link {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .alternative-link h3 {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .alternative-link a {
+            color: #667eea;
+            word-break: break-all;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        .email-footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer-info {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Security notice */
+        .security-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .security-notice h4 {
+            color: #856404;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .security-notice p {
+            color: #856404;
+            font-size: 13px;
+            margin: 0;
+        }
+        
+        .warning-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            
+            .email-content {
+                padding: 30px 20px;
+            }
+            
+            .email-header {
+                padding: 25px 20px;
+            }
+            
+            .email-header h1 {
+                font-size: 24px;
+            }
+            
+            .verify-button {
+                padding: 12px 30px;
+                font-size: 15px;
+            }
+            
+            .email-footer {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #f5f5f5; margin: 0; padding: 20px;">
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>🔐 Verify Your Email</h1>
+            <p>Welcome to E-Commerce Authentication</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="email-content">
+            <div class="greeting">Hello {{username}}!</div>
+            
+            <div class="message">
+                Thank you for registering with our e-commerce platform. To complete your account setup and start shopping, please verify your email address by clicking the button below.
+            </div>
+            
+            <div class="button-container">
+                <a href="{{verification_link}}" class="verify-button">Verify Email Address</a>
+            </div>
+            
+            <div class="alternative-link">
+                <h3>Button not working?</h3>
+                <p>Copy and paste this link into your browser:</p>
+                <a href="{{verification_link}}">{{verification_link}}</a>
+            </div>
+            
+            <div class="security-notice">
+                <h4><span class="warning-icon">⚠️</span>Important Security Information</h4>
+                <p>This verification link will expire in {{expires_in}}. If you didn't create an account with us, please ignore this email or contact our support team.</p>
+            </div>
+            
+            <div class="message" style="margin-top: 30px; font-size: 14px; color: #6c757d;">
+                Once verified, you'll be able to:
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>Browse and purchase products</li>
+                    <li>Track your orders</li>
+                    <li>Save items to your wishlist</li>
+                    <li>Receive exclusive offers and updates</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <div class="footer-info">
+                This email was sent to you because you registered for an account on our platform.
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Support</a>
+            </div>
+            
+            <div style="margin-top: 20px; font-size: 12px; color: #6c757d;">
+                © 2024 E-Commerce Authentication System. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
